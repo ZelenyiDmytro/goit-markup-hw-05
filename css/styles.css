@@ -481,12 +481,6 @@ a {
   margin-left: auto;
 }
 
-.email-and-button-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-}
-
 .footer-subtitle {
   font-weight: 500;
   font-size: 16px;
@@ -496,23 +490,33 @@ a {
   margin-bottom: 16px;
 }
 
+.footer-form {
+  display: flex;
+  gap: 24px;
+}
+
 .footer-email-field {
   border: 1px solid #ffffff;
   border-radius: 4px;
   width: 264px;
   height: 40px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
-  background-color: #2e2f42;
-  margin-right: 16px;
+  color: #ffffff;
+  background-color: transparent;
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  padding-left: 16px;
 }
 
 .footer-email-field::placeholder {
+  color: #ffffff;
   padding: 8px 16px;
 }
 
 .footer-submit-button {
   border-radius: 4px;
-  width: 165px;
+  min-width: 165px;
   height: 40px;
   background-color: #4d5ae5;
   cursor: pointer;
@@ -524,6 +528,10 @@ a {
   letter-spacing: 0.04em;
   text-align: center;
   color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
 }
 
 .footer-submit-button:hover,
@@ -550,6 +558,7 @@ a {
   pointer-events: none;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
     visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 72px 24px 24px 24px;
 }
 
 .backdrop.is-open {
@@ -586,8 +595,16 @@ a {
   top: 24px;
   right: 24px;
   cursor: pointer;
-  display: block;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-close-button-icon {
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-close-button:hover,
@@ -648,8 +665,9 @@ a {
   width: 360px;
   height: 40px;
   padding-left: 38px;
-  background-color: #ffffff;
+  background-color: transparent;
   outline: transparent;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .input-fields:focus {
@@ -665,18 +683,27 @@ a {
   left: 16px;
   top: 50%;
   transform: translateY(-50%);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .textarea-field {
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 4px;
+  line-height: 1.17;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: rgba(46, 47, 66, 0.4);
+  background-color: transparent;
   width: 360px;
   height: 120px;
   position: relative;
   padding: 8px 16px;
   margin-bottom: 16px;
+  margin-left: 24px;
+  margin-right: 24px;
   outline: transparent;
   resize: none;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .textarea-field:focus {
@@ -738,6 +765,9 @@ a {
   justify-content: center;
   margin-bottom: 24px;
   fill: transparent;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-window-checkbox {
@@ -751,5 +781,5 @@ a {
 .modal-check:checked + .modal-window-checkbox .check-custom {
   background-color: #404bbf;
   border: none;
-  fill: #ffffff;
+  fill: #f4f4fd;
 }
